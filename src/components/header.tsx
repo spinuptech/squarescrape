@@ -1,5 +1,5 @@
 import React from "react";
-import { style as common, colors } from "../styles/common";
+import { colors } from "../styles/common";
 
 export const Header = () => {
   const style = {

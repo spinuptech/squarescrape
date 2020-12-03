@@ -41,7 +41,12 @@ export const DisplayMarkup = (props: { posts: Array<PostCollection> }) => {
 
   return markup ? (
     <div style={style.container}>
-      <h2>Step 4: Paste into email program 😎</h2>
+      <h2>
+        Step 4: Paste into email program{" "}
+        <span role="img" aria-label="Smiley Face">
+          😎
+        </span>
+      </h2>
       <p style={style.text}>Code below is copied to your clipboard!</p>
       <textarea value={markup} readOnly style={style.textarea}></textarea>
     </div>

@@ -9,8 +9,6 @@ export const CategoryForm = (props: { feeds: Array<Feed>; onSubmit: any }) => {
   const [checkedItems, setCheckedItems] = useState<CheckBoxMap>({});
   const NO_CATEGORIES = "All posts";
 
-  // TODO: Next Make "no category" option available on each feed
-
   const style = {
     container: {
       ...common.row,
@@ -77,6 +75,7 @@ export const CategoryForm = (props: { feeds: Array<Feed>; onSubmit: any }) => {
   };
 
   const handleSubmit = () => {
+    // eslint-disable-next-line
     const items = Object.keys(checkedItems).map((key) => {
       const item = checkedItems[key];
       const feed = feeds.find((f: Feed) => f.title === key);

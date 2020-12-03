@@ -4,12 +4,10 @@ import { renderToStaticMarkup } from "react-dom/server";
 import { decodeHTMLEntities, decodeHTMLCharacters } from "../utils";
 import moment from "moment";
 import { CSSProperties } from "@material-ui/core/styles/withStyles";
-import { style as common, colors } from "../styles/common";
 import { defaultTheme } from "../styles/themes";
 
 export class PostsTransformer {
   constructor(private postCollections: Array<PostCollection>) {}
-  // TODO: investigate https://www.campaignmonitor.com/css/color-background/background/ for support
 
   private parseStartDate = (time: number) => {
     const date = moment(time);
