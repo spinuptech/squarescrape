@@ -4,13 +4,13 @@ import "firebase/firestore";
 
 // init
 firebase.initializeApp({
-  apiKey: "AIzaSyDW6MnXJy9aSHszm2EDmMGVKh58tv-vTe4",
-  authDomain: "squarescrape.firebaseapp.com",
-  databaseURL: "https://squarescrape.firebaseio.com",
-  projectId: "squarescrape",
-  storageBucket: "squarescrape.appspot.com",
-  messagingSenderId: "813213656832",
-  appId: "1:813213656832:web:440cc72230a62644faf5e5",
+  apiKey: "AIzaSyBCkeQeSvYVPfOO6WQavvBcY81nfJWY7gM",
+  authDomain: "squarescrape-c3cbe.firebaseapp.com",
+  projectId: "squarescrape-c3cbe",
+  storageBucket: "squarescrape-c3cbe.appspot.com",
+  messagingSenderId: "107147838576",
+  appId: "1:107147838576:web:ac0cafbfc49f4601c5a0b5",
+  measurementId: "G-2TFT2SPN2M",
 });
 
 // setup
