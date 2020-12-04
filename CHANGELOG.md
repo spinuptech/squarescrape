@@ -1,3 +1,9 @@
+#### 0.2.1 (2020-12-04)
+
+##### Build System / Dependencies
+
+*  Update release scripts (1b922b39)
+
 ### 0.2.0 (2020-12-04)
 
 ##### Build System / Dependencies
