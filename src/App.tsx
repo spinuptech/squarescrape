@@ -10,13 +10,27 @@ import { DisplayMarkup } from "./components/displayMarkup";
 import { Feed, PostCollection } from "../functions/src/models";
 import { scroll } from "./utils";
 import "./styles/App.css";
+import { CSSProperties } from "@material-ui/core/styles/withStyles";
 
 function App() {
+  const [errors, setErrors] = useState<string>();
   const [user, setUser] = useState<firebase.User>();
   const [urls, setUrls] = useState<Array<string>>();
   const [feeds, setFeeds] = useState<Array<Feed>>([]);
   const [posts, setPosts] = useState<Array<PostCollection>>([]);
   const [selectedPosts, setSelectedPosts] = useState<Array<PostCollection>>([]);
+
+  const style = {
+    errors: {
+      padding: "10px 20px",
+      margin: "10px 20px",
+      border: "1px solid #f44336",
+      borderRadius: "3px",
+      textAlign: "center",
+      background: "#ffebee",
+      color: "#b71c1c",
+    } as CSSProperties,
+  };
 
   // auth
   useEffect(() => {
@@ -28,6 +42,10 @@ function App() {
 
     return () => unregisterAuthObserver(); // Make sure we un-register Firebase observers when the component unmounts.
   }, []);
+
+  useEffect(() => {
+    setErrors(undefined);
+  }, [urls, feeds, posts, selectedPosts]);
 
   const handleAuth = async (user: firebase.User) => {
     const urls = await getUserData(user);
@@ -42,6 +60,7 @@ function App() {
       scroll();
       if (user) await updateUserData(user, urls);
     } catch (error) {
+      setErrors("Something went wrong. Check your feed url again.");
       console.error(error);
     }
   };
@@ -59,6 +78,7 @@ function App() {
   return (
     <div className="App">
       <Header />
+      {errors && <p style={style.errors}>{errors}</p>}
       <UrlForm onSubmit={handleSubmitUrls} urls={urls} />
       <CategoryForm onSubmit={handleSubmitFeeds} feeds={feeds} />
       <PostsForm onSubmit={handleSubmitCategories} posts={posts} />
