@@ -20,9 +20,33 @@ const db = firebase.firestore();
 // local emulation
 if (window.location.hostname === "localhost") {
   functions.useEmulator("localhost", 5001);
-  db.useEmulator("localhost", 9000);
+  // db.useEmulator("localhost", 8080);
+  // auth.useEmulator("http://localhost:9000");
 }
 
 // functions
 export const getCategories = functions.httpsCallable("getCategories");
 export const getPosts = functions.httpsCallable("getPosts");
+
+// users
+export const updateUserData = async (user: firebase.User, urls: string[]) => {
+  const update = await db
+    .collection("users")
+    .doc(user.uid)
+    .set({ urls }, { merge: true });
+  return update;
+};
+
+export const getUserData = async (user: firebase.User): Promise<string[]> => {
+  const doc = await db.collection("users").doc(user.uid).get();
+  if (doc.exists) {
+    const data = doc.data();
+    if (data) return data.urls;
+  }
+
+  // then create new one if none exists
+  const urls = ["http://example.com/events"];
+  await updateUserData(user, urls);
+
+  return urls;
+};

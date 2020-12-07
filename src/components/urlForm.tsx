@@ -1,13 +1,13 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { TextField, Button } from "@material-ui/core";
 import { style as common } from "../styles/common";
 
-export const UrlForm = (props: any) => {
-  const { onSubmit } = props;
-  const [urls, setUrls] = useState([
-    "https://themill.church/announcements",
-    "https://themill.church/events",
-  ]);
+export const UrlForm = (props: {
+  onSubmit: any;
+  urls: string[] | undefined;
+}) => {
+  const { onSubmit, urls: storedUrls } = props;
+  const [urls, setUrls] = useState<string[]>([]);
 
   const style = {
     container: {
@@ -33,6 +33,10 @@ export const UrlForm = (props: any) => {
       marginBottom: "10px",
     },
   };
+
+  useEffect(() => {
+    if (storedUrls) setUrls(storedUrls);
+  }, [storedUrls]);
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
