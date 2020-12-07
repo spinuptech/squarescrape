@@ -1,3 +1,21 @@
+### 0.3.0 (2020-12-07)
+
+##### Build System / Dependencies
+
+*  Change firebase instance (7185e24e)
+*  Add security policy (7c35180a)
+*  Add code security scan (61466dc6)
+
+##### New Features
+
+*  Add error handling (7f44ee14)
+*  Store user data on firestore (8b3f849d)
+
+##### Other Changes
+
+*  Change firebase instance"This reverts commit 7185e24ece3f28aca8fcb15a4911e2cf29b13349. (cb7cd5b7)
+*  Add security policy" (ce12b17c)
+
 #### 0.2.1 (2020-12-04)
 
 ##### Build System / Dependencies
