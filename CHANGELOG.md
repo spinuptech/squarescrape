@@ -1,3 +1,16 @@
+#### 0.3.1 (2020-12-14)
+
+##### Build System / Dependencies
+
+*  Remove duplicate runs for CodeQL (5d69a048)
+*  Remove duplicate runs (1f0ca536)
+*  Adjust workflows (fe3a48c7)
+*  Adjust remaining workflows (be396dca)
+*  Give workflows names (a7f801b5)
+*  Fix master name as prod (19d1e2c3)
+*  Rename master to prod (82a48a56)
+*  Add pr automation (c0efc1c6)
+
 ### 0.3.0 (2020-12-07)
 
 ##### Build System / Dependencies
