@@ -1,4 +1,4 @@
-name: Create PR - Prod
+name: "Create PR: Prod"
 
 on:
   push:

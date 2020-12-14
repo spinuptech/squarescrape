@@ -1,4 +1,4 @@
-name: Create PR - Stage
+name: "Create PR: Stage"
 
 on:
   push:
