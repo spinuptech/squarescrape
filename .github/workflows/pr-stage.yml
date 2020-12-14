@@ -1,3 +1,5 @@
+name: Create PR - Stage
+
 on:
   push:
     tags:

@@ -1,3 +1,5 @@
+name: Create PR - Prod
+
 on:
   push:
     branches:
